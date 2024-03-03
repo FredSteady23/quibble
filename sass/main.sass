@@ -89,6 +89,12 @@ img
 
 // btns
 
+#top_banner
+	background-size: cover
+	background-repeat: no-repeat
+	background-position: center
+
+
 #header
 	padding-top: 24px
 	.inner_header
@@ -118,19 +124,13 @@ img
 						&:hover
 							color: $accent
 
-#top_banner
-	background-size: cover
-	background-repeat: no-repeat
-	background-position: center
-
-
 .notif
 	background-color: $light_accent
 	border-radius: 20px
 	padding: 10px 25px
 	display: flex
 	align-items: center
-	max-width: 260px
+	max-width: 256px
 	img
 		width: 16px
 		height: auto
@@ -146,15 +146,19 @@ img
 			border-color: darken($accent, 10%)
 
 .main_banner
-	padding: 160px 0px 320px
+	padding: 100px 0px 500px
 	.mb_info
 		>h1
-			font-size: 48px
-			font-weight: 700
+			font-size: 50px
+			font-weight: 900
 			color: #160637
+			line-height: 1.1
+			max-width: 430px
+			margin-top: 10px
 		>.descr
 			color: #8989a2
 			margin: 14px 0px 44px
+			font-size: 18px
 		>.btns
 			display: flex
 			align-items: center
