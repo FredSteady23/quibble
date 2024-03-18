@@ -40,13 +40,20 @@ body {
   font-size: 16px;
   min-width: 320px;
   position: relative;
-  line-height: 1.65;
   font-family: "Lato", sans-serif;
   overflow-x: hidden;
   opacity: 1; }
 
 img {
   max-width: 100%; }
+
+a {
+  text-decoration: none;
+  color: #111;
+  -webkit-transition: all 0.4s ease;
+  transition: all 0.4s ease; }
+  a:hover {
+    color: #722ED1; }
 
 .img-responsive {
   display: block;
@@ -120,17 +127,60 @@ img {
         list-style-type: none; }
         #header .inner_header .right_side_header .mnu_top > li {
           display: inline-block;
-          margin-right: 40px; }
+          position: relative; }
           #header .inner_header .right_side_header .mnu_top > li > a {
             display: block;
             text-decoration: none;
             font-weight: 500;
+            padding: 5px 40px 5px 0;
             color: #000;
             -webkit-transition: color 0.4s ease;
             transition: color 0.4s ease; }
             #header .inner_header .right_side_header .mnu_top > li > a:hover {
               color: #722ED1; }
+          #header .inner_header .right_side_header .mnu_top > li > .sub_menu {
+            position: absolute;
+            top: 35px;
+            background-color: #fff;
+            -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+                    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+            z-index: 10;
+            border-radius: 5px;
+            padding: 5px 0;
+            -webkit-animation: 0.6s opac;
+                    animation: 0.6s opac;
+            display: none; }
+            #header .inner_header .right_side_header .mnu_top > li > .sub_menu > li {
+              display: block; }
+              #header .inner_header .right_side_header .mnu_top > li > .sub_menu > li > a {
+                padding: 3px 10px;
+                font-size: 14px; }
+          #header .inner_header .right_side_header .mnu_top > li.has_sub_menu:hover > .sub_menu {
+            display: block; }
+          #header .inner_header .right_side_header .mnu_top > li.has_sub_menu::after {
+            content: "";
+            display: block;
+            width: 12px;
+            height: 6px;
+            background-image: url("/img/arrow-down.svg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            position: absolute;
+            top: 15px;
+            right: 18px; }
 
+@-webkit-keyframes opac {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
+@keyframes opac {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
 .notif {
   background-color: #F9F0FF;
   border-radius: 20px;
@@ -141,7 +191,9 @@ img {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  max-width: 256px; }
+  max-width: -webkit-max-content;
+  max-width: -moz-max-content;
+  max-width: max-content; }
   .notif img {
     width: 16px;
     height: auto;
@@ -158,7 +210,7 @@ img {
       border-color: #5b25a7; }
 
 .main_banner {
-  padding: 100px 0px 500px; }
+  padding: 100px 0 200px; }
   .main_banner .mb_info > h1 {
     font-size: 50px;
     font-weight: 900;
@@ -179,3 +231,38 @@ img {
             align-items: center; }
     .main_banner .mb_info > .btns > .btn_white {
       margin-left: 16px; }
+
+#advantages .notif {
+  margin: 0 auto;
+  max-width: 170px; }
+  #advantages .notif img {
+    width: 25px;
+    height: auto;
+    margin-right: 7px; }
+#advantages h2 {
+  color: #160637;
+  font-size: 36px;
+  font-weight: 700;
+  text-align: center;
+  margin: 32px auto 12px; }
+#advantages .description {
+  color: #8989a2;
+  margin-bottom: 48px;
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto;
+  padding-bottom: 60px; }
+#advantages .row_adv .item_adv > img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin: 0 145px 20px 145px; }
+#advantages .row_adv .item_adv > .heading {
+  color: #160637;
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-align: center; }
+#advantages .row_adv .item_adv > .descr {
+  color: #8989a2;
+  text-align: center; }
